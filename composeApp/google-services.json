@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "952284800652",
+    "project_id": "test-mscode",
+    "storage_bucket": "test-mscode.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:952284800652:android:77a8dd50e55ca33ef8fda9",
+        "android_client_info": {
+          "package_name": "com.mscode.playercard"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcT1k5ACb1cga4FlXFYFtwP50qtnnwKjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:952284800652:android:7bb7a1eee4dc2509f8fda9",
+        "android_client_info": {
+          "package_name": "com.mscode.winsport"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcT1k5ACb1cga4FlXFYFtwP50qtnnwKjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
