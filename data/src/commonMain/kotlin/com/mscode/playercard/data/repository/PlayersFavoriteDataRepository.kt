@@ -1,11 +1,11 @@
 package com.mscode.playercard.data.repository
 
-import com.mscode.playercard.data.localDataSource.localPersistent.FavoritesPlayersData
+import com.mscode.playercard.data.localSource.FavoritesPlayersLocalDataSource
 import com.mscode.playercard.domain.models.Player
 import com.mscode.playercard.domain.repository.PlayersFavoriteRepository
 
 class PlayersFavoriteDataRepository(
-    private val favoritesPlayersData: FavoritesPlayersData
+    private val favoritesPlayersData: FavoritesPlayersLocalDataSource
 ): PlayersFavoriteRepository {
 
     override fun getPlayersFavorite(): List<Player> =

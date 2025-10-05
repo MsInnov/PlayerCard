@@ -1,5 +1,6 @@
 package com.mscode.playercard.data.localDataSource.localPersistent
 
+import com.mscode.playercard.data.localSource.FavoritesPlayersLocalDataSource
 import com.mscode.playercard.domain.models.Player
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -7,16 +8,16 @@ import kotlinx.serialization.json.Json
 
 class FavoritesPlayersData(
     private val storage: KeyValueStorage
-) {
+): FavoritesPlayersLocalDataSource {
 
     private val json = Json { ignoreUnknownKeys = true }
 
-    fun savePlayer(player: Player) {
+    override fun savePlayer(player: Player) {
         val data = json.encodeToString(player.toPlayerFavorite())
         storage.putString(player.idPlayer, data)
     }
 
-    fun getPlayer(playerId: String): Player? {
+    override fun getPlayer(playerId: String): Player? {
         val data = storage.getString(playerId, "")
         if (data.isEmpty()) return null
         return runCatching {
@@ -24,7 +25,7 @@ class FavoritesPlayersData(
         }.getOrNull()
     }
 
-    fun getPlayers(): List<Player> {
+    override fun getPlayers(): List<Player> {
         val data = storage.getAll()
 
         return data.values
@@ -37,7 +38,7 @@ class FavoritesPlayersData(
             }
     }
 
-    fun clearPlayer(playerId: String) {
+    override fun clearPlayer(playerId: String) {
         storage.putString(playerId, "")
     }
 }

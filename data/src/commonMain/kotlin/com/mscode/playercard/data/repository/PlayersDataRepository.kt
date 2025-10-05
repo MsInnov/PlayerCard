@@ -1,13 +1,13 @@
 package com.mscode.playercard.data.repository
 
-import com.mscode.playercard.data.localDataSource.localVolatile.PlayersLocalData
+import com.mscode.playercard.data.localSource.PlayersLocalDataSource
 import com.mscode.playercard.domain.models.Player
 import com.mscode.playercard.domain.repository.PlayersRepository
-import com.mscode.playercard.remote.RemotePlayerCard
+import com.mscode.playercard.remote.remoteSource.PlayerCardRemoteDataSource
 
 class PlayersDataRepository (
-    private val remotePlayerCard: RemotePlayerCard,
-    private val playersLocalData: PlayersLocalData
+    private val remotePlayerCard: PlayerCardRemoteDataSource,
+    private val playersLocalData: PlayersLocalDataSource
 ): PlayersRepository {
 
     override suspend fun getPlayers(

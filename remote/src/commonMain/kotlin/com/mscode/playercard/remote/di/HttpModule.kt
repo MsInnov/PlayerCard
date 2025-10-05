@@ -3,6 +3,8 @@ package com.mscode.playercard.remote.di
 import com.mscode.playercard.remote.http.HttpClientFactory
 import com.mscode.playercard.remote.RemotePlayerCard
 import com.mscode.playercard.remote.http.HttpPlayerCardFactory
+import com.mscode.playercard.remote.remoteSource.PlayerCardRemoteDataSource
+import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 
@@ -11,5 +13,5 @@ val httpCommonModule = module {
     factory { HttpClientFactory(getOrNull(), getOrNull()) }
 
     singleOf(::HttpPlayerCardFactory)
-    singleOf(::RemotePlayerCard)
+    singleOf(::RemotePlayerCard) { bind<PlayerCardRemoteDataSource>() }
 }

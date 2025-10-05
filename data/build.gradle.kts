@@ -40,6 +40,8 @@ kotlin {
             api(libs.kotlinx.serializer)
         }
         commonTest.dependencies {
+            implementation(kotlin("test"))
+            implementation(libs.kotlinx.coroutines.test)
         }
         androidMain.dependencies {
             implementation(libs.koin.android)

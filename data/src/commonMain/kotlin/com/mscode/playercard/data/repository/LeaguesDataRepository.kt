@@ -1,13 +1,13 @@
 package com.mscode.playercard.data.repository
 
-import com.mscode.playercard.data.localDataSource.localVolatile.LeaguesLocalData
+import com.mscode.playercard.data.localSource.LeaguesLocalDataSource
 import com.mscode.playercard.domain.models.League
 import com.mscode.playercard.domain.repository.LeaguesRepository
-import com.mscode.playercard.remote.RemotePlayerCard
+import com.mscode.playercard.remote.remoteSource.PlayerCardRemoteDataSource
 
 class LeaguesDataRepository (
-    private val remotePlayerCard: RemotePlayerCard,
-    private val leaguesLocalData: LeaguesLocalData
+    private val remotePlayerCard: PlayerCardRemoteDataSource,
+    private val leaguesLocalData: LeaguesLocalDataSource
 ): LeaguesRepository {
 
     override suspend fun getLeagues(): List<League> =
