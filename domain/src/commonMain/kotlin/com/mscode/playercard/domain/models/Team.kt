@@ -1,6 +1,6 @@
 package com.mscode.playercard.domain.models
 
-data class Teams(
+data class Team(
     val teamId: String,
     val strTeam: String,
     val intFormedYear: String?,

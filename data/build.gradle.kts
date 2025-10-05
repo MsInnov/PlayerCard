@@ -10,6 +10,7 @@ import kotlin.dec
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
@@ -36,10 +37,12 @@ kotlin {
             api(projects.domain)
             api(projects.remote)
             implementation(libs.koin.core)
+            api(libs.kotlinx.serializer)
         }
         commonTest.dependencies {
         }
         androidMain.dependencies {
+            implementation(libs.koin.android)
         }
         iosMain.dependencies {
         }

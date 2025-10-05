@@ -1,4 +1,4 @@
-package com.mscode.playercard.view
+package com.mscode.playercard.view.navigation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,14 +14,12 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.mscode.playercard.view.models.PlayerUi
-import com.mscode.playercard.view.navigation.LocalNavController
-import com.mscode.playercard.view.navigation.NavigationScreen
-import com.mscode.playercard.view.navigation.NavigationViewModel
 import com.mscode.playercard.view.screens.LeaguesScreen
 import com.mscode.playercard.view.screens.PlayerScreen
 import com.mscode.playercard.view.screens.PlayersScreen
 import com.mscode.playercard.view.screens.TeamsScreen
 import com.mscode.playercard.view.theme.PlayerCardAppTheme
+import com.mscode.playercard.view.viewmodels.PlayersFavoriteViewModel
 import com.mscode.playercard.view.viewmodels.PlayersViewModel
 import com.mscode.playercard.view.viewmodels.PlayersViewModel.PlayersEvent.GetPlayers
 import com.mscode.playercard.view.viewmodels.TeamsViewModel

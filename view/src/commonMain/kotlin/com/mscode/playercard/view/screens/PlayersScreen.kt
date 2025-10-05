@@ -12,9 +12,14 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.Yellow
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -24,16 +29,27 @@ import com.mscode.playercard.view.models.ScreenStateUiModel
 import com.mscode.playercard.view.navigation.LocalNavController
 import com.mscode.playercard.view.navigation.NavigationScreen
 import com.mscode.playercard.view.navigation.PlayerCardController
+import com.mscode.playercard.view.viewmodels.PlayersFavoriteViewModel
+import com.mscode.playercard.view.viewmodels.PlayersFavoriteViewModel.PlayerFavoriteEvent.GetAllPlayersFavorite
 import com.mscode.playercard.view.viewmodels.PlayersViewModel
+import com.mscode.playercard.view.widget.FavoriteContentBottomSheet
+import com.mscode.playercard.view.widget.FavoritesBottomSheet
+import org.jetbrains.compose.resources.painterResource
+import playercard.view.generated.resources.Res
+import playercard.view.generated.resources.favorite_header
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PlayersScreen(
     navController: PlayerCardController = LocalNavController.current,
+    viewModelFavorite: PlayersFavoriteViewModel = viewModel { PlayersFavoriteViewModel() },
     viewModel: PlayersViewModel = viewModel { PlayersViewModel() },
     onPlayer: (player: PlayerUi) -> Unit
 ) {
     val playersState = viewModel.uiModel.collectAsState()
+    val favorites = viewModelFavorite.uiModelGetFavorites.collectAsState()
+    viewModelFavorite.onEvent(GetAllPlayersFavorite)
+    var showFavorites by remember { mutableStateOf(false) }
 
     Scaffold(
         topBar = {
@@ -47,7 +63,20 @@ fun PlayersScreen(
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     titleContentColor = Color.White
-                )
+                ),
+                actions = {
+                    IconButton(
+                        onClick = {
+                            showFavorites = true
+                        }
+                    ) {
+                        Icon(
+                            painter = painterResource(Res.drawable.favorite_header),
+                            contentDescription = "Favorites",
+                            tint = if(favorites.value.isNotEmpty()) Yellow else Color.Gray
+                        )
+                    }
+                }
             )
         }
     ) { padding ->
@@ -70,6 +99,9 @@ fun PlayersScreen(
                             onPlayer = onPlayer
                         )
                     }
+                }
+                FavoritesBottomSheet(show = showFavorites, onDismiss = { showFavorites = false }) {
+                    FavoriteContentBottomSheet(favorites.value)
                 }
             }
 
