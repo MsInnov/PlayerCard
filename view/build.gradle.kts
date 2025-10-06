@@ -49,6 +49,10 @@ kotlin {
 
         }
         commonTest.dependencies {
+            implementation(kotlin("test"))
+            implementation(libs.turbine)
+            implementation(libs.kotlinx.coroutines.test)
+            implementation(libs.koin.test)
         }
         androidMain.dependencies {
 

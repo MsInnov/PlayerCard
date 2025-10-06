@@ -26,6 +26,7 @@ kotlinxDatetime = "0.6.0"
 kotlinxSerializer = "1.7.3"
 ktor = "3.0.1"
 peekaboo = "0.5.2"
+turbine = "1.1.0"
 uiTextAndroid = "1.9.2"
 
 [libraries]
@@ -63,6 +64,7 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 peekaboo-ui = { module = "io.github.onseok:peekaboo-ui", version.ref = "peekaboo" }
 peekaboo-image-picker = { module = "io.github.onseok:peekaboo-image-picker", version.ref = "peekaboo" }
 androidx-ui-text-android = { group = "androidx.compose.ui", name = "ui-text-android", version.ref = "uiTextAndroid" }
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
