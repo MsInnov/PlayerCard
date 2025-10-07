@@ -105,9 +105,9 @@ class PlayersFavoriteViewModelTest {
         viewModel.uiModelGetFavorites.test {
             awaitItem()
             val result = awaitItem()
-            assertEquals("Messi", result[0].idTeam)
-            assertEquals("Mbappé", result[1].idTeam)
-            assertEquals("Haaland", result[2].idTeam)
+            assertEquals("Messi", result[0].strPlayer)
+            assertEquals("Mbappé", result[1].strPlayer)
+            assertEquals("Haaland", result[2].strPlayer)
         }
     }
 
@@ -130,16 +130,16 @@ class PlayersFavoriteViewModelTest {
         viewModel.uiModelGetFavorites.test {
             awaitItem()
             val result = awaitItem()
-            assertEquals("Messi", result[0].idTeam)
-            assertEquals("Mbappé", result[1].idTeam)
-            assertEquals("Haaland", result[2].idTeam)
-            viewModel.onEvent(PlayersFavoriteViewModel.PlayerFavoriteEvent.SavePlayerFavorite(TestViewFactory.createPlayerUi(idPlayer = "4", idTeam = "Cocard")))
+            assertEquals("Messi", result[0].strPlayer)
+            assertEquals("Mbappé", result[1].strPlayer)
+            assertEquals("Haaland", result[2].strPlayer)
+            viewModel.onEvent(PlayersFavoriteViewModel.PlayerFavoriteEvent.SavePlayerFavorite(TestViewFactory.createPlayerUi(idPlayer = "4", strPlayer = "Cocard")))
             viewModel.onEvent(PlayersFavoriteViewModel.PlayerFavoriteEvent.GetAllPlayersFavorite)
             val result2 = awaitItem()
-            assertEquals("Messi", result2[0].idTeam)
-            assertEquals("Mbappé", result2[1].idTeam)
-            assertEquals("Haaland", result2[2].idTeam)
-            assertEquals("Cocard", result2[3].idTeam)
+            assertEquals("Messi", result2[0].strPlayer)
+            assertEquals("Mbappé", result2[1].strPlayer)
+            assertEquals("Haaland", result2[2].strPlayer)
+            assertEquals("Cocard", result2[3].strPlayer)
         }
     }
 }

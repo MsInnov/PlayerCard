@@ -1,6 +1,6 @@
-package com.mscode.playercard.data.localDataSource.localVolatile
+package com.mscode.playercard.data.localdatasource.localvolatile
 
-import com.mscode.playercard.data.localSource.LeaguesLocalDataSource
+import com.mscode.playercard.data.localsource.LeaguesLocalDataSource
 import com.mscode.playercard.domain.models.League
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -21,7 +21,7 @@ class GetPlayersUseCaseTest {
         val players = result.getOrNull()
         assertNotNull(players)
         assertEquals(3, players.size)
-        assertEquals("Lionel Messi", players.first().strPlayer)
+        assertEquals("Messi", players.first().strPlayer)
     }
 
     @Test

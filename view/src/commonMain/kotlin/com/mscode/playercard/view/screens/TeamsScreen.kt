@@ -211,9 +211,15 @@ fun TeamItem(
                             )
                         )
                     }
+                }
+
+                Spacer(Modifier.height(4.dp))
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+
                     team.intFormedYear?.let {
                         Text(
-                            text = " • Since $it",
+                            text = "Since $it",
                             style = MaterialTheme.typography.bodySmall.copy(
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )

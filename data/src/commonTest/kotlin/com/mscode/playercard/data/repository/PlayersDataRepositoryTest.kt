@@ -3,7 +3,7 @@ package com.mscode.playercard.data.repository
 import com.mscode.playercard.data.fake.FakePlayersLocalData
 import com.mscode.playercard.data.fake.FakeRemotePlayerCard
 import com.mscode.playercard.data.fake.TestDataFactory
-import com.mscode.playercard.data.localDataSource.localVolatile.PlayersByTeamLocalData
+import com.mscode.playercard.data.localdatasource.localvolatile.PlayersByTeamLocalData
 import kotlinx.coroutines.test.runTest
 import kotlin.test.*
 
@@ -118,7 +118,6 @@ class PlayersDataRepositoryTest {
         // Arrange
         val remotePlayer = TestDataFactory.createPlayerResponse(
             idPlayer = "123",
-            idTeam = testTeamId,
             strPlayer = "Test Player",
             strNationality = "France",
             strPosition = "Midfielder"
@@ -133,12 +132,10 @@ class PlayersDataRepositoryTest {
         // Assert
         with(result[0]) {
             assertEquals("123", idPlayer)
-            assertEquals(testTeamId, idTeam)
             assertEquals("Test Player", strPlayer)
             assertEquals("France", strNationality)
             assertEquals("Midfielder", strPosition)
             assertEquals("PSG", strTeam)
-            assertEquals("Soccer", strSport)
             assertEquals("1987-06-24", dateBorn)
             assertEquals("30", strNumber)
             assertEquals("170 cm", strHeight)
@@ -232,11 +229,11 @@ class PlayersDataRepositoryTest {
             idPlayer = "1",
             strPlayer = "Minimal Player"
         ).copy(
-            idTeam2 = null,
-            idTeamNational = null,
-            strPlayerAlternate = null,
-            dateDied = null,
-            strKit = null
+            strTeam = null,
+            strYoutube = null,
+            strTwitter = null,
+            strFacebook = null,
+            strInstagram = null
         )
         fakeRemote = FakeRemotePlayerCard(playersToReturn = listOf(playerWithNulls))
         fakeLocal = FakePlayersLocalData(emptyList())
@@ -247,11 +244,11 @@ class PlayersDataRepositoryTest {
 
         // Assert
         with(result[0]) {
-            assertNull(idTeam2)
-            assertNull(idTeamNational)
-            assertNull(strPlayerAlternate)
-            assertNull(dateDied)
-            assertNull(strKit)
+            assertNull(strTeam)
+            assertNull(strYoutube)
+            assertNull(strTwitter)
+            assertNull(strFacebook)
+            assertNull(strInstagram)
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.mscode.playercard.data.fake
 
-import com.mscode.playercard.remote.remoteSource.PlayerCardRemoteDataSource
+import com.mscode.playercard.remote.remotesource.PlayerCardRemoteDataSource
 import com.mscode.playercard.remote.response.LeagueResponse
 import com.mscode.playercard.remote.response.LeaguesResponse
 import com.mscode.playercard.remote.response.PlayerResponse

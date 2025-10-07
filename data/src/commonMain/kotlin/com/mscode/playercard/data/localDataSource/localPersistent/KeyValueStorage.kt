@@ -1,4 +1,4 @@
-package com.mscode.playercard.data.localDataSource.localPersistent
+package com.mscode.playercard.data.localdatasource.localpersistent
 
 expect class KeyValueStorage(context: Any?) {
     fun putString(key: String, value: String)

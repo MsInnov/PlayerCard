@@ -1,7 +1,7 @@
 package com.mscode.playercard.data.fake
 
-import com.mscode.playercard.data.localDataSource.localVolatile.PlayersByTeamLocalData
-import com.mscode.playercard.data.localSource.PlayersLocalDataSource
+import com.mscode.playercard.data.localdatasource.localvolatile.PlayersByTeamLocalData
+import com.mscode.playercard.data.localsource.PlayersLocalDataSource
 import com.mscode.playercard.domain.models.Player
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

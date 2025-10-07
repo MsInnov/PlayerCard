@@ -53,7 +53,7 @@ class PlayersViewModelTest {
 
             val success = awaitItem()
             assertTrue(success is ScreenStateUiModel.Success)
-            assertEquals(success.content[0].idTeam,"Messi")
+            assertEquals(success.content[0].strPlayer,"Messi")
         }
     }
 

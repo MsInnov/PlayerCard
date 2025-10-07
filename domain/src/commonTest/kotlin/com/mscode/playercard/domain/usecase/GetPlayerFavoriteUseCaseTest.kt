@@ -18,7 +18,7 @@ class GetPlayerFavoriteUseCaseTest {
         val result = useCase.invoke("1")
 
         assertNotNull(result)
-        assertEquals("Lionel Messi", result.strPlayer)
+        assertEquals("Messi", result.strPlayer)
     }
 
     @Test

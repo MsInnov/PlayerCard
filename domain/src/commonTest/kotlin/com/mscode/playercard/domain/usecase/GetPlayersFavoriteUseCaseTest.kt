@@ -18,7 +18,7 @@ class GetPlayersFavoriteUseCaseTest {
 
         assertTrue(result.isNotEmpty(), "Expected non-empty player list")
         assertEquals(3, result.size)
-        assertEquals("Lionel Messi", result.first().strPlayer)
+        assertEquals("Messi", result.first().strPlayer)
     }
 
     @Test

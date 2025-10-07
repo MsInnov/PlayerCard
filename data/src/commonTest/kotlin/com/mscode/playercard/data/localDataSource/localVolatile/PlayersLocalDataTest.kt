@@ -1,4 +1,4 @@
-package com.mscode.playercard.data.localDataSource.localVolatile
+package com.mscode.playercard.data.localdatasource.localvolatile
 
 import com.mscode.playercard.data.fake.TestDataFactory
 import kotlinx.coroutines.test.runTest
@@ -28,7 +28,7 @@ class PlayersLocalDataTest {
         assertEquals(1, current.size)
         assertEquals("team1", current.first().teamsId)
         assertEquals(2, current.first().players.size)
-        assertEquals("Lionel Messi", current.first().players[0].strPlayer)
+        assertEquals("Player A", current.first().players[0].strPlayer)
     }
 
     @Test
@@ -52,9 +52,9 @@ class PlayersLocalDataTest {
         assertEquals(2, current.size)
 
         assertEquals("team1", current[0].teamsId)
-        assertEquals("Lionel Messi", current[0].players[0].strPlayer)
+        assertEquals("Player A", current[0].players[0].strPlayer)
 
         assertEquals("team2", current[1].teamsId)
-        assertEquals("Lionel Messi", current[1].players[0].strPlayer)
+        assertEquals("Player B", current[1].players[0].strPlayer)
     }
 }

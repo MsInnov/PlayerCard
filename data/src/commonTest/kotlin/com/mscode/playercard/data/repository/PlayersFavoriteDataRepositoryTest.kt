@@ -215,7 +215,6 @@ class PlayersFavoriteDataRepositoryTest {
         // Arrange
         val completePlayer = TestDataFactory.createPlayer(
             idPlayer = "123",
-            idTeam = "456",
             strPlayer = "Complete Player",
             strNationality = "Brazil",
             strPosition = "Striker"
@@ -228,7 +227,6 @@ class PlayersFavoriteDataRepositoryTest {
         val result = repository.getPlayerFavorite("123")
         assertNotNull(result)
         assertEquals("123", result.idPlayer)
-        assertEquals("456", result.idTeam)
         assertEquals("Complete Player", result.strPlayer)
         assertEquals("Brazil", result.strNationality)
         assertEquals("Striker", result.strPosition)

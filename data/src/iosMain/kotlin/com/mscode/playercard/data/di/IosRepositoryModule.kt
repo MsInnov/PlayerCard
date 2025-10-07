@@ -1,6 +1,6 @@
 package com.mscode.playercard.data.di
 
-import com.mscode.playercard.data.localDataSource.localPersistent.KeyValueStorage
+import com.mscode.playercard.data.localdatasource.localpersistent.KeyValueStorage
 import org.koin.dsl.module
 
 val iosRepositoryModule = module {

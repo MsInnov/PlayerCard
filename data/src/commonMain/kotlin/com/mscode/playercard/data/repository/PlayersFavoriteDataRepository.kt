@@ -1,6 +1,6 @@
 package com.mscode.playercard.data.repository
 
-import com.mscode.playercard.data.localSource.FavoritesPlayersLocalDataSource
+import com.mscode.playercard.data.localsource.FavoritesPlayersLocalDataSource
 import com.mscode.playercard.domain.models.Player
 import com.mscode.playercard.domain.repository.PlayersFavoriteRepository
 

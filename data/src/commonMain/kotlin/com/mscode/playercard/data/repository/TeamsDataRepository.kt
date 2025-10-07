@@ -1,11 +1,9 @@
 package com.mscode.playercard.data.repository
 
-import com.mscode.playercard.data.localDataSource.localVolatile.TeamsLocalData
-import com.mscode.playercard.data.localSource.TeamsLocalDataSource
+import com.mscode.playercard.data.localsource.TeamsLocalDataSource
 import com.mscode.playercard.domain.models.Team
 import com.mscode.playercard.domain.repository.TeamsRepository
-import com.mscode.playercard.remote.RemotePlayerCard
-import com.mscode.playercard.remote.remoteSource.PlayerCardRemoteDataSource
+import com.mscode.playercard.remote.remotesource.PlayerCardRemoteDataSource
 
 class TeamsDataRepository(
     private val remotePlayerCard: PlayerCardRemoteDataSource,
@@ -23,22 +21,9 @@ class TeamsDataRepository(
                     strTeam = team.strTeam,
                     intFormedYear = team.intFormedYear,
                     strLeague = team.strLeague,
-                    strDivision = team.strDivision,
                     strStadium = team.strStadium,
-                    strLocation = team.strLocation,
-                    intStadiumCapacity = team.intStadiumCapacity,
-                    strWebsite = team.strWebsite,
-                    strFacebook = team.strFacebook,
-                    strTwitter = team.strTwitter,
-                    strInstagram = team.strInstagram,
-                    strDescriptionEN = team.strDescriptionEN,
-                    strDescriptionFR = team.strDescriptionFR,
-                    strGender = team.strGender,
                     strCountry = team.strCountry,
-                    strBadge = team.strBadge,
-                    strLogo = team.strLogo,
-                    strFanart1 = team.strFanart1,
-                    strEquipment = team.strEquipment
+                    strBadge = team.strBadge
                 )
             }
             teamsLocalData.setTeams(

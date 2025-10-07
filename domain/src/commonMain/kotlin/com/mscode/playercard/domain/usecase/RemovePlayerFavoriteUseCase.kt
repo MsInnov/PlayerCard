@@ -6,6 +6,6 @@ class RemovePlayerFavoriteUseCase(
     private val playersFavoriteRepository: PlayersFavoriteRepository
 ) {
 
-    suspend fun invoke(playerId: String) = playersFavoriteRepository.removePlayerFavorite(playerId)
+    fun invoke(playerId: String) = playersFavoriteRepository.removePlayerFavorite(playerId)
 
 }

@@ -3,7 +3,7 @@ package com.mscode.playercard.remote.di
 import com.mscode.playercard.remote.http.HttpClientFactory
 import com.mscode.playercard.remote.RemotePlayerCard
 import com.mscode.playercard.remote.http.HttpPlayerCardFactory
-import com.mscode.playercard.remote.remoteSource.PlayerCardRemoteDataSource
+import com.mscode.playercard.remote.remotesource.PlayerCardRemoteDataSource
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module

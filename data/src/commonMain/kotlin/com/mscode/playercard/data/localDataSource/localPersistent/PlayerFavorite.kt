@@ -1,6 +1,9 @@
-package com.mscode.playercard.domain.models
+package com.mscode.playercard.data.localdatasource.localpersistent
 
-data class Player (
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class PlayerFavorite (
     val idPlayer: String,
     val strNationality: String?,
     val strPlayer: String?,
@@ -20,6 +23,6 @@ data class Player (
     val strHeight: String?,
     val strWeight: String?,
     val strThumb: String?,
-    val strRender: String?,
-    val strCutout: String?
+    val strCutout: String?,
+    val strRender: String?
 )

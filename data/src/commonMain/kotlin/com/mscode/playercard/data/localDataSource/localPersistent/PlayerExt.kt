@@ -1,33 +1,9 @@
-package com.mscode.playercard.view.models
+package com.mscode.playercard.data.localdatasource.localpersistent
 
 import com.mscode.playercard.domain.models.Player
 
-data class PlayerUi (
-    val idPlayer: String,
-    val strNationality: String?,
-    val strPlayer: String?,
-    val strTeam: String?,
-    val dateBorn: String?,
-    val strNumber: String?,
-    val strBirthLocation: String?,
-    val strDescriptionEN: String?,
-    val strDescriptionFR: String?,
-    val strGender: String?,
-    val strPosition: String?,
-    val strFacebook: String?,
-    val strWebsite: String?,
-    val strTwitter: String?,
-    val strInstagram: String?,
-    val strYoutube: String?,
-    val strHeight: String?,
-    val strWeight: String?,
-    val strThumb: String?,
-    val strRender: String?,
-    val strCutout: String?,
-)
-
-fun Player.toPlayerUi() =
-    PlayerUi(
+fun Player.toPlayerFavorite(): PlayerFavorite =
+    PlayerFavorite(
         idPlayer = idPlayer,
         strNationality = strNationality,
         strPlayer = strPlayer,
@@ -47,11 +23,11 @@ fun Player.toPlayerUi() =
         strHeight = strHeight,
         strWeight = strWeight,
         strThumb = strThumb,
-        strRender = strRender,
-        strCutout = strCutout
+        strCutout = strCutout,
+        strRender = strRender
     )
 
-fun PlayerUi.toPlayer() =
+fun PlayerFavorite.toPlayer(): Player =
     Player(
         idPlayer = idPlayer,
         strNationality = strNationality,
@@ -72,6 +48,6 @@ fun PlayerUi.toPlayer() =
         strHeight = strHeight,
         strWeight = strWeight,
         strThumb = strThumb,
-        strRender = strRender,
-        strCutout = strCutout
+        strCutout = strCutout,
+        strRender = strRender
     )

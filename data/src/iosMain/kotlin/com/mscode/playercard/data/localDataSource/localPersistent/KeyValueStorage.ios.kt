@@ -1,4 +1,4 @@
-package com.mscode.playercard.data.localDataSource.localPersistent
+package com.mscode.playercard.data.localdatasource.localpersistent
 
 import platform.Foundation.NSUserDefaults
 

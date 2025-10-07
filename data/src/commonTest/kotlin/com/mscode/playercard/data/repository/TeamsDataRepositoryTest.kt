@@ -3,7 +3,7 @@ package com.mscode.playercard.data.repository
 import com.mscode.playercard.data.fake.FakeRemotePlayerCard
 import com.mscode.playercard.data.fake.FakeTeamsLocalData
 import com.mscode.playercard.data.fake.TestDataFactory
-import com.mscode.playercard.data.localDataSource.localVolatile.TeamsByLeagueLocalData
+import com.mscode.playercard.data.localdatasource.localvolatile.TeamsByLeagueLocalData
 import kotlinx.coroutines.test.runTest
 import kotlin.test.*
 
@@ -218,22 +218,9 @@ class TeamsDataRepositoryTest {
             assertEquals("Test Team", strTeam)
             assertEquals("1970", intFormedYear)
             assertEquals("Test League", strLeague)
-            assertEquals("1", strDivision)
             assertEquals("Test Stadium", strStadium)
-            assertEquals("Paris", strLocation)
-            assertEquals("47929", intStadiumCapacity)
-            assertEquals("www.psg.fr", strWebsite)
-            assertEquals("www.facebook.com/PSG", strFacebook)
-            assertEquals("twitter.com/PSG_inside", strTwitter)
-            assertEquals("instagram.com/psg", strInstagram)
-            assertEquals("Paris Saint-Germain Football Club", strDescriptionEN)
-            assertEquals("Paris Saint-Germain Football Club", strDescriptionFR)
-            assertEquals("Male", strGender)
             assertEquals("Test Country", strCountry)
             assertEquals("https://example.com/badge.png", strBadge)
-            assertEquals("https://example.com/logo.png", strLogo)
-            assertEquals("https://example.com/fanart.jpg", strFanart1)
-            assertEquals("Nike", strEquipment)
         }
     }
 

@@ -1,7 +1,7 @@
 package com.mscode.playercard.remote
 
 import com.mscode.playercard.remote.http.HttpPlayerCardFactory
-import com.mscode.playercard.remote.remoteSource.PlayerCardRemoteDataSource
+import com.mscode.playercard.remote.remotesource.PlayerCardRemoteDataSource
 import com.mscode.playercard.remote.response.LeaguesResponse
 import com.mscode.playercard.remote.response.PlayersResponse
 import com.mscode.playercard.remote.response.TeamsResponse

@@ -1,4 +1,4 @@
-package com.mscode.playercard.remote.remoteSource
+package com.mscode.playercard.remote.remotesource
 
 import com.mscode.playercard.remote.response.LeaguesResponse
 import com.mscode.playercard.remote.response.PlayersResponse
